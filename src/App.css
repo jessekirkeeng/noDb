@@ -1,5 +1,6 @@
 body {
   display: inline-block;
+  flex-direction: row;
 }
 
 .menu {
