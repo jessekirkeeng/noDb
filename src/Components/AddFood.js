@@ -6,15 +6,7 @@ export default class AddFood extends React.Component {
         super()
         this.state = {
             foodName: '',
-        }
-    }
-    
-    // reset=(e)=>{
-    //     this.setState({
-    //     foodName:''
-    // })}
-
-    handleInput = (e) => this.setState({foodName: e.target.value})
+        }}
 
     addFood = (req, res) => {
         const body =  { name: this.state.foodName }
@@ -23,11 +15,13 @@ export default class AddFood extends React.Component {
         .catch(err => console.log(err))
     }
 
+    handleInput = (e) => this.setState({foodName: e.target.value})
+
     render(){
         return(
             <div>
-            <input onChange={this.handleInput} onSubmit={this.reset} placeholder='Add Here'/>
-            <button onClick={this.addFood} color='red'>Add Food!</button>
+            <input onChange={this.handleInput} placeholder='Add Here'/>
+            <button onClick={this.addFood}>Add to List</button>
             </div>
         )
     }
